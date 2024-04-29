@@ -5,37 +5,36 @@
 package pund4;
 
 /**
- *
- * @author javie
+ * Clase principal PUND4
+ * @author Jorge Peñalver Quirós
+ * @since 29-04-2024
+ * @version 1.0 
  */
 public class PUND4 {
 
     /**
-     * @param args the command line arguments
+     * Main de PUND4
+     * @param args 
      */
     public static void main(String[] args) {
-        operativa_Apuesta(0);
-    }
-
-    public static void operativa_Apuesta(int dinero) {
-        Apuesta laApuesta;
+        Apuesta miApuesta;
         int mi_dinero;
-        
-        laApuesta = new Apuesta(1000, 4, 2);
+
+        miApuesta = new Apuesta(1000, 4, 2);
         try {
             System.out.println("Apostando...");
-            laApuesta.apostar(25);
+            miApuesta.apostar(25);
         } catch (Exception e) {
             System.out.println("Fallo al realizar la Apuesta");
         }
 
         try {
             System.out.println("Intento cobrar apuesta segun el resultado del partido");
-            laApuesta.cobrar_apuesta(2, 3);
+            miApuesta.cobrar_apuesta(2, 3);
         } catch (Exception e) {
             System.out.println("Fallo al cobrar la apuesta");
         }
-        mi_dinero = laApuesta.getDinero_disp();
+        mi_dinero = miApuesta.getDinero_disp();
         System.out.println("El dinero que tengo tras las apuestas es " + mi_dinero);
     }
     
